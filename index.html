@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Refrigeração e Climatização - Assistência Técnica Especializada no Vale do Itajaí</title>
+    <meta name="description" content="Assistência técnica especializada em manutenção de refrigeradores e lavadoras no Vale do Itajaí. Serviço rápido, peças originais e garantia.">
+    <meta name="keywords" content="refrigeração, climatização, manutenção de geladeira, conserto de lavadora, Vale do Itajaí, assistência técnica">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Prime Refrigeração e Climatização">
+    <meta property="og:description" content="Especialistas em manutenção de refrigeradores e lavadoras. Atendimento em todo o Vale do Itajaí.">
+    <meta name="twitter:title" content="Prime Refrigeração e Climatização">
+    <meta name="twitter:description" content="Serviço especializado de manutenção em eletrodomésticos.">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #0077B6; /* Azul do logo */
+            --secondary-color: #FACC15; /* Amarelo do logo */
+            --accent-color: #2D9CDB; /* Azul claro */
+            --text-dark: #1F2937;
+            --text-light: #F9FAFB;
+            --bg-light: #FFFFFF;
+            --bg-muted: #F3F4F6;
+        }
+    }
+
+    @layer base {
+        body {
+            @apply text-[var(--text-dark)] bg-[var(--bg-light)] font-sans;
+            scroll-behavior: smooth;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition-all flex items-center justify-center gap-2;
+        }
+        .btn-secondary {
+            @apply bg-[var(--secondary-color)] text-[var(--text-dark)] px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition-all flex items-center justify-center gap-2;
+        }
+        .section-padding {
+            @apply py-16 px-4 md:px-8 max-w-7xl mx-auto;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transition-transform hover:-translate-y-1;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Shared Components -->
+    <script type="text/babel" src="components/Navbar.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/Services.js"></script>
+    <script type="text/babel" src="components/Features.js"></script>
+    <script type="text/babel" src="components/Gallery.js"></script>
+    <script type="text/babel" src="components/Testimonials.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <!-- Entry Point -->
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
