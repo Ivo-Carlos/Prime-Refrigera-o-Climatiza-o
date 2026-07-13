@@ -11,7 +11,7 @@ function Services() {
             title: "Lavadoras",
             subtitle: "Lava e Seca, Tanquinhos",
             description: "Reparo especializado em máquinas de lavar. Problemas com centrifugação, vazamentos, barulhos estranhos ou falhas eletrônicas.",
-            image: "https://app.trickle.so/storage/public/images/usr_1d1a77c340000001/80b6827a-f277-4448-aadc-23ff1100da46.jpeg",
+            image: "https://app.trickle.so/storage/public/images/usr_1d1a77c340000001/8fffbcb0-4465-47f4-8a53-e2c36cd569eb.jpeg",
             tags: ["Lava e Seca", "Carregamento Topo", "Instalação", "Higienização"]
         }
     ];

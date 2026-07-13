@@ -23,6 +23,12 @@ function Features() {
             description: "Atendemos o Vale do Itajaí com a mesma agilidade e eficiência.",
             icon: "icon-map-pin",
             color: "bg-red-50 text-red-600"
+        },
+        {
+            title: "Orçamento Grátis",
+            description: "Nós visitamos a sua residência e fazemos o orçamento sem nenhum custo adicional.",
+            icon: "icon-calculator",
+            color: "bg-purple-50 text-purple-600"
         }
     ];
 
@@ -37,7 +43,7 @@ function Features() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                     {features.map((feature, idx) => (
                         <div key={idx} className="card p-8 flex flex-col items-center text-center">
                             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${feature.color}`}>

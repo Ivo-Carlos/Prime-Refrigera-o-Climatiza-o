@@ -14,7 +14,7 @@ function Testimonials() {
         },
         {
             name: "Marcos Pereira",
-            role: "Itajaí - SC",
+            role: "Barra Velha - SC",
             text: "Muito satisfeito com a honestidade da equipe. Em vez de empurrarem peças desnecessárias, focaram no defeito real da placa. Ganharam um cliente fiel.",
             stars: 5
         }

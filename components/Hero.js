@@ -22,7 +22,7 @@ function Hero() {
                         Especialista no Vale do Itajaí
                     </span>
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                        Seus eletrodomésticos em <span className="text-[var(--secondary-color)]">boas mãos.</span>
+                        Seu refrigerador e lavadora com <span className="text-[var(--secondary-color)]">quem mais entende.</span>
                     </h1>
                     <div className="text-xl text-gray-200 mb-8 max-w-3xl leading-relaxed">
                         Assistência técnica especializada na manutenção de refrigeradores e lavadoras. Em: 
@@ -34,7 +34,7 @@ function Hero() {
                             ))}
                         </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                         <a href="https://wa.me/5547996980353?text=Vim%20do%20Google%20e%20Quero%20Fazer%20um%20Or%C3%A7amento." target="_blank" className="btn-secondary text-lg">
                             <div className="icon-message-square text-xl"></div>
                             Chamar no WhatsApp
@@ -42,9 +42,13 @@ function Hero() {
                         <a href="#services" className="btn-primary bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 text-lg">
                             Ver Nossos Serviços
                         </a>
+                        <a href="#contact" className="btn-primary bg-green-500/20 backdrop-blur-md border border-green-500/30 text-green-300 hover:bg-green-500/30 text-lg">
+                            <div className="icon-calculator text-xl"></div>
+                            Orçamento Grátis
+                        </a>
                     </div>
 
-                    <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
                         <div className="flex items-center gap-3 text-white">
                             <div className="w-10 h-10 rounded-full bg-[var(--primary-color)] flex items-center justify-center">
                                 <div className="icon-check text-white"></div>
@@ -62,6 +66,12 @@ function Hero() {
                                 <div className="icon-clock text-white"></div>
                             </div>
                             <span className="font-semibold italic">Atendimento Rápido</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-white">
+                            <div className="w-10 h-10 rounded-full bg-[var(--primary-color)] flex items-center justify-center">
+                                <div className="icon-calculator text-white"></div>
+                            </div>
+                            <span className="font-semibold italic">Orçamento Grátis</span>
                         </div>
                     </div>
                 </div>
