@@ -1,117 +1,28 @@
 function Contact() {
-    const [status, setStatus] = React.useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setStatus('sending');
-        
-        const formData = new FormData(e.target);
-        const name = formData.get('name');
-        const phone = formData.get('phone');
-        const device = formData.get('device');
-        const problem = formData.get('problem');
-
-        const message = `*Novo Orçamento via Site*\n\n*Nome:* ${name}\n*WhatsApp:* ${phone}\n*Aparelho:* ${device}\n*Problema:* ${problem}`;
-        const whatsappUrl = `https://wa.me/5547996980353?text=${encodeURIComponent(message)}`;
-
-        setTimeout(() => {
-            setStatus('success');
-            window.open(whatsappUrl, '_blank');
-            e.target.reset();
-        }, 800);
-    };
-
-    return (
-        <section id="contact" className="bg-[var(--bg-muted)]" data-name="contact" data-file="components/Contact.js">
-            <div className="section-padding">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                    <div>
-                        <h2 className="text-3xl md:text-5xl font-black mb-6">Fale <span className="text-[var(--primary-color)]">Agora</span> Conosco</h2>
-                        <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                            Não deixe o seu eletrodoméstico parado por mais tempo. Agende uma visita técnica hoje mesmo e tenha a garantia de um serviço de excelência.
-                        </p>
-
-                        <div className="space-y-6">
-                            <div className="flex items-start gap-5">
-                                <div className="w-12 h-12 rounded-xl bg-[var(--primary-color)] flex items-center justify-center flex-shrink-0">
-                                    <div className="icon-map-pin text-white text-xl"></div>
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-xl mb-1">Localização</h4>
-                                    <p className="text-gray-600 mb-3">Atendemos todo o Vale do Itajaí:</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {['Itajaí', 'Balneário Camboriú', 'Itapema', 'Porto Belo', 'Navegantes', 'Camboriú', 'Penha', 'Balneário Piçarras', 'Barra Velha', 'Brusque', 'Ilhota', 'Bombinhas'].map(city => (
-                                            <span key={city} className="bg-[var(--primary-color)] text-white px-2 py-1 rounded text-xs font-bold shadow-sm">
-                                                {city}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-5">
-                                <div className="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
-                                    <div className="icon-message-square text-white text-xl"></div>
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-xl mb-1">WhatsApp</h4>
-                                    <p className="text-gray-600">(47) 99698-0353</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-5">
-                                <div className="w-12 h-12 rounded-xl bg-gray-700 flex items-center justify-center flex-shrink-0">
-                                    <div className="icon-clock text-white text-xl"></div>
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-xl mb-1">Horário de Atendimento</h4>
-                                    <p className="text-gray-600">Segunda à Sexta: 08:00 - 18:00<br/>Sábado: 08:00 - 12:00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
-                        <h3 className="text-2xl font-black mb-8">Envie sua mensagem</h3>
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-2">Nome Completo</label>
-                                    <input name="name" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] outline-none transition-all" placeholder="Seu nome"/>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-bold text-gray-700 mb-2">WhatsApp</label>
-                                    <input name="phone" type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] outline-none transition-all" placeholder="(47) 90000-0000"/>
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">Aparelho com Defeito</label>
-                                <select name="device" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] outline-none transition-all">
-                                    <option>Refrigerador / Freezer</option>
-                                    <option>Lavadora / Secadora</option>
-                                    <option>Ar Condicionado</option>
-                                    <option>Outros</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">Descreva o Problema</label>
-                                <textarea name="problem" rows="4" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] outline-none transition-all" placeholder="Ex: A geladeira parou de gelar na parte de baixo..."></textarea>
-                            </div>
-                            <button 
-                                type="submit" 
-                                disabled={status === 'sending'}
-                                className={`w-full btn-primary py-4 text-lg ${status === 'sending' ? 'opacity-70 cursor-wait' : ''}`}
-                            >
-                                {status === 'sending' ? 'Enviando...' : 'Enviar Solicitação'}
-                                {status === 'success' && <div className="icon-check ml-2"></div>}
-                            </button>
-                            {status === 'success' && (
-                                <p className="text-green-600 font-bold text-center animate-bounce">
-                                    Mensagem enviada! Retornaremos em breve.
-                                </p>
-                            )}
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+  const cities = ['Itajaí','Balneário Camboriú','Itapema','Porto Belo','Navegantes','Camboriú','Penha','Balneário Piçarras','Barra Velha','Brusque','Ilhota','Bombinhas'];
+  const [status, setStatus] = React.useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const value = key => String(data.get(key) || '').trim();
+    const message = `*Solicitação de avaliação técnica - Site*\n\n*Nome:* ${value('name')}\n*Cidade:* ${value('city')}\n*Endereço:* ${value('address')}\n*Equipamento:* ${value('device')}\n*Marca:* ${value('brand') || 'Não informada'}\n*Defeito:* ${value('problem')}\n*Quando precisa:* ${value('urgency')}\n\n*Origem:* Site / Google Ads`;
+    const url = `https://wa.me/5547996980353?text=${encodeURIComponent(message)}`;
+    window.location.href = url;
+    setStatus('redirecting');
+  };
+  const field = 'w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[var(--primary-color)] outline-none';
+  return <section id="contact" className="bg-[var(--bg-muted)]"><div className="section-padding grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+    <div><span className="text-sm font-bold text-[var(--primary-color)] uppercase tracking-wide">Atendimento no Vale do Itajaí</span><h2 className="text-3xl md:text-5xl font-black mt-3 mb-5">Seu eletrodoméstico apresentou defeito?</h2><p className="text-lg text-gray-600 mb-6">Conte o que aconteceu e onde o equipamento está. Nossa equipe poderá avaliar sua solicitação e orientar sobre os próximos passos.</p><div className="space-y-3 text-gray-700"><p>✓ Atendimento para geladeiras, freezers, lavadoras e secadoras</p><p>✓ Solicitação direta pelo WhatsApp</p><p>✓ Informe o endereço para verificar a região de atendimento</p></div><h3 className="font-bold mt-8 mb-3">Cidades atendidas</h3><div className="flex flex-wrap gap-2">{cities.map(city => <span key={city} className="bg-white border rounded-full px-3 py-1 text-sm">{city}</span>)}</div><p className="mt-7 text-sm text-gray-600">WhatsApp: (47) 99698-0353</p></div>
+    <div className="bg-white p-6 md:p-9 rounded-3xl shadow-xl border border-gray-100"><h3 className="text-2xl font-black mb-2">Solicite uma avaliação técnica</h3><p className="text-sm text-gray-600 mb-6">Preencha os dados para enviar sua solicitação pelo WhatsApp.</p><form onSubmit={handleSubmit} className="space-y-4">
+      <div><label htmlFor="name" className="block font-semibold mb-1">Seu nome *</label><input id="name" name="name" autoComplete="name" required maxLength="100" className={field} placeholder="Como podemos chamar você?" /></div>
+      <div><label htmlFor="city" className="block font-semibold mb-1">Cidade do atendimento *</label><select id="city" name="city" required defaultValue="" className={field}><option value="" disabled>Selecione sua cidade</option>{cities.map(city=><option key={city} value={city}>{city}</option>)}</select></div>
+      <div><label htmlFor="address" className="block font-semibold mb-1">Endereço do atendimento *</label><input id="address" name="address" autoComplete="street-address" required minLength="8" maxLength="180" className={field} placeholder="Rua, número, bairro e complemento" /></div>
+      <div><label htmlFor="device" className="block font-semibold mb-1">Qual equipamento precisa de conserto? *</label><select id="device" name="device" required defaultValue="" className={field}><option value="" disabled>Selecione o equipamento</option><option>Geladeira / Refrigerador</option><option>Freezer</option><option>Máquina de lavar roupas</option><option>Lava e seca</option><option>Secadora de roupas</option><option>Outro equipamento (consultar disponibilidade)</option></select></div>
+      <div><label htmlFor="brand" className="block font-semibold mb-1">Marca do equipamento (opcional)</label><input id="brand" name="brand" maxLength="70" className={field} placeholder="Ex.: Brastemp, Electrolux, LG" /></div>
+      <div><label htmlFor="problem" className="block font-semibold mb-1">O que está acontecendo? *</label><textarea id="problem" name="problem" rows="3" required minLength="10" maxLength="800" className={field} placeholder="Ex.: Minha geladeira liga, mas não está gelando" /></div>
+      <div><label htmlFor="urgency" className="block font-semibold mb-1">Quando precisa de atendimento? *</label><select id="urgency" name="urgency" required className={field}><option>O quanto antes</option><option>Nos próximos dias</option><option>Estou pesquisando opções</option></select></div>
+      <p className="text-xs text-gray-500">Ao continuar, você será direcionado ao WhatsApp com os dados preenchidos. O envio só será concluído quando você enviar a mensagem na conversa.</p>
+      <button type="submit" className="w-full btn-primary py-4 text-lg">Continuar no WhatsApp →</button>{status === 'redirecting' && <p className="text-sm text-center">Abrindo o WhatsApp para você confirmar o envio...</p>}
+    </form></div>
+  </div></section>;
 }

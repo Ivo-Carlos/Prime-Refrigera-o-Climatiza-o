@@ -19,10 +19,10 @@ function Hero() {
             <div className="relative z-10 section-padding w-full">
                 <div className="max-w-3xl">
                     <span className="inline-block px-4 py-1 bg-[var(--secondary-color)] text-[var(--text-dark)] font-bold rounded-full text-sm mb-6 uppercase tracking-wider">
-                        Especialista no Vale do Itajaí
+                        Atendimento no Vale do Itajaí
                     </span>
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                        Seu refrigerador e lavadora com <span className="text-[var(--secondary-color)]">quem mais entende.</span>
+                        Conserto de geladeira e máquina de lavar <span className="text-[var(--secondary-color)]">no Vale do Itajaí.</span>
                     </h1>
                     <div className="text-xl text-gray-200 mb-8 max-w-3xl leading-relaxed">
                         Assistência técnica especializada na manutenção de refrigeradores e lavadoras. Em: 
@@ -37,14 +37,14 @@ function Hero() {
                     <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                         <a href="https://wa.me/5547996980353?text=Vim%20do%20Google%20e%20Quero%20Fazer%20um%20Or%C3%A7amento." target="_blank" className="btn-secondary text-lg">
                             <div className="icon-message-square text-xl"></div>
-                            Chamar no WhatsApp
+                            Falar com um técnico
                         </a>
                         <a href="#services" className="btn-primary bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 text-lg">
-                            Ver Nossos Serviços
+                            Conhecer serviços
                         </a>
                         <a href="#contact" className="btn-primary bg-green-500/20 backdrop-blur-md border border-green-500/30 text-green-300 hover:bg-green-500/30 text-lg">
                             <div className="icon-calculator text-xl"></div>
-                            Orçamento Grátis
+                            Solicitar Avaliação
                         </a>
                     </div>
 
@@ -71,7 +71,7 @@ function Hero() {
                             <div className="w-10 h-10 rounded-full bg-[var(--primary-color)] flex items-center justify-center">
                                 <div className="icon-calculator text-white"></div>
                             </div>
-                            <span className="font-semibold italic">Orçamento Grátis</span>
+                            <span className="font-semibold italic">Solicitar Avaliação</span>
                         </div>
                     </div>
                 </div>
